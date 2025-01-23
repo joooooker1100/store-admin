@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "paths": {
+        "@components": [
+          "./Components/index.ts"
+        ],
+        "@model" : ["./model/index.ts"],
+        "@helper" : ["./Common/index.ts"]
+      }
+    }
+  }
