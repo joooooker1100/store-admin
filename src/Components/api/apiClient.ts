@@ -265,6 +265,18 @@ export const createPurchaseInvoice = async (
   return data;
 };
 
+export const updatePayment = async (
+  id: number,
+  payment: Partial<Payment>
+): Promise<Payment> => {
+  const { data } = await axios.patch(`/payments/${id}`, payment);
+  return data;
+};
+
+export const deletePayment = async (id: number): Promise<void> => {
+  await axios.delete(`/payments/${id}`);
+};
+
 export const updatePurchaseInvoice = async (
   id: number,
   invoice: Partial<PurchaseInvoice>

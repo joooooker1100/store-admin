@@ -15,6 +15,8 @@ import CategoryList from "Components/Category/CategoryList";
 import PaymentList from "Components/Payment/PaymentList";
 import OrderList from "Components/Order/OrderList";
 import SupplierList from "Components/Supplier/SupplierList";
+import CreateCustomer from "Components/Customer/CreateCustomer";
+import EditCustomerWrapper from "Components/Customer/EditCustomerWrapper";
 
 export interface RouteObject {
   caseSensitive?: boolean;
@@ -72,6 +74,11 @@ const routes: RouteObject[] = [
         path: "/panel/purchase-invoice-details",
         element: <PurchaseInvoiceDetailList />,
       },
+      {
+        id: "CreateCustomer",
+        path: "/customers/create",
+        element: <CreateCustomer />,
+      },
     ],
   },
 ];
@@ -88,6 +95,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="customers" element={<CustomerList />} />
+          <Route path="customers/create" element={<CreateCustomer />} />
+          <Route path="customers/edit/:id" element={<EditCustomerWrapper />} />
           <Route path="order-statuses" element={<OrderStatusList />} />
           <Route path="products" element={<ProductList />} />
           <Route path="order-report" element={<OrderReport />} />
